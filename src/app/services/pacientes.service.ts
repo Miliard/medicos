@@ -20,20 +20,22 @@ export class PacientesService {
       titulo: 'Pacientes',
       icono: 'mdi mdi-gauge',
       submenu: [
-        {
-          titulo: 'Datos del doctor',
-          url: '/dashboard/datos-doctor',
-        },
+        
+         {titulo: 'Registrar Paciente', url: '/dashboard/crear-paciente'},
+         {titulo: 'Datos de paciente', url: '/dashboard/datos-paciente'}
+        
       ],
     },
 {
       titulo: 'Historial Clinico',
-      icono: 'mdi mdi-gauge',
+      icono: 'mdi mdi-bullseye',
       submenu: [
         {
-          titulo: 'Datos del doctor',
-          url: '/dashboard/datos-doctor',
+          titulo: 'Nuevo Historial',
+          url: '/dashboard/nuevo-historial',
         },
+          {titulo:'Historial', url: '/dashboard/historial-pacientes'}
+
       ],
     },
   ];

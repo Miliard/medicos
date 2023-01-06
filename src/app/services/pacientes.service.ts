@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PacientesService {
+  
+  url: any = 'http://localhost:api/';
   public menu = [
     {
       titulo: 'Doctores',
@@ -40,5 +43,9 @@ export class PacientesService {
     },
   ];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  altaPaciente(){
+   return this.http.post(`${this.url}AltaPaciente.php`, JSON.stringify);   
+  }
 }

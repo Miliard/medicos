@@ -8,19 +8,19 @@ export class Pacientes {
 
   constructor(
 
-   idpacientes: string,
-   nompaciente: string,
+   idpacientes: string, 
+   nompaciente: string, 
    edadpaciente: string,
-   telpaciente: string,
-   dirpaciente: string,
+   telpaciente: string, 
+   dirpaciente: string, 
 
   ){
 
-   this.idpacientes = idpacientes
-   this.nompaciente = nompaciente
-   this.edadpaciente =edadpaciente 
-   this.telpaciente = telpaciente
-   this.dirpaciente = dirpaciente
+   this.idpacientes = idpacientes;
+   this.nompaciente = nompaciente;
+   this.edadpaciente =edadpaciente; 
+   this.telpaciente = telpaciente;
+   this.dirpaciente = dirpaciente;
 
   }
 

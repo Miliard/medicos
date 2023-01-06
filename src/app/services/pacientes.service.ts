@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Pacientes } from '../interfaces/pacientes.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -45,7 +46,7 @@ export class PacientesService {
 
   constructor(private http: HttpClient) {}
 
-  altaPaciente(){
+  altaPaciente(pacientes: Pacientes){
    return this.http.post(`${this.url}AltaPaciente.php`, JSON.stringify);   
   }
 }

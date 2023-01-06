@@ -8,6 +8,8 @@ import { ExpedienteComponent } from './expediente/expediente.component';
 import { HistorialPacienteComponent } from './historial-paciente/historial-paciente.component';
 import { NuevoHistorialComponent } from './nuevo-historial/nuevo-historial.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +26,11 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
+
   ]
 })
 export class PagesModule { }

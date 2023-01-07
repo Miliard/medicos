@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PacientesService } from '../services/pacientes.service';
 
@@ -9,12 +9,11 @@ import { PacientesService } from '../services/pacientes.service';
 })
 export class PagesComponent implements OnInit {
 
-  constructor(public pacientesService: PacientesService, public router:Router) {
-
-  }
+  constructor(public pacientesService: PacientesService, public router: Router) {
+      console.log( pacientesService.menu);
+   }
 
   ngOnInit(): void {
-    
   }
 
   logout() {

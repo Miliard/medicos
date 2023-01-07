@@ -56,24 +56,24 @@
                                                 <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                         </div>
                                     </li> -->
-                                
-                        <li *ngFor="let item of pacientesService.menu">
-                            <a class=" waves-effect waves-dark" aria-expanded="false">
-                                <i [class]="item.icono"></i>
-                                <span class="hide-menu">{{item.titulo}}</span>
-                            </a>
-                            <ul aria-expanded="false">
-                                <li *ngFor="let subitem of item.submenu">
-                                    <a
-                                        [routerLink]="subitem.url"
-                                        routerLinkActive="active"
-                                        [routerLinkActiveOptions]="{exact:true}"
-                                    >{{ subitem.titulo }}</a>
-                                </li>
-                            </ul>
-                        </li>
+                                    
+                                    <li *ngFor="let item of pacientesService.menu"> 
+                                        <a class="waves-effect waves-dark" aria-expanded="false">
+                                            <i [class]="item.icono"></i>
+                                            <span class="hide-menu">{{item.titulo}}</span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li *ngFor="let subitem of item.submenu">
+                                                <a
+                                                    [routerLink]="subitem.url"
+                                                    routerLinkActive="active"
+                                                    [routerLinkActiveOptions]="{exact:true}"
+                                                >{{ subitem.titulo}}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a class="cursor" (click)="logout();"><i class="fa fa-power-off"></i>Salir</a></li>  
+                                    <li><a class="cursor" (click)="logout();" ><i class="fa fa-power-off"></i>Salir</a></li>  
                                     <!--<li role="separator" class="divider"></li>
                                     <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
                                     <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
@@ -118,7 +118,7 @@
                                 <li><a href="index4.html">Modern</a></li>
                             </ul>
                         </li>-->
-                        <li *ngFor="let item of pacientesService.menu">
+                        <li *ngFor="let item of pacientesService.menu"> 
                             <a class="has-arrow waves-effect waves-dark" aria-expanded="false">
                                 <i [class]="item.icono"></i>
                                 <span class="hide-menu">{{item.titulo}}</span>
@@ -129,7 +129,7 @@
                                         [routerLink]="subitem.url"
                                         routerLinkActive="active"
                                         [routerLinkActiveOptions]="{exact:true}"
-                                    >{{ subitem.titulo }}</a>
+                                    >{{ subitem.titulo}}</a>
                                 </li>
                             </ul>
                         </li>
@@ -331,7 +331,7 @@
         <!-- ============================================================== -->
         <!-- ============================================================== -->
     
-        <router-outlet>
+        <router-outlet>        
         </router-outlet>        
 
 </div>

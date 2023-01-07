@@ -8,24 +8,22 @@ import { HistorialPacienteComponent } from './historial-paciente/historial-pacie
 import { NuevoHistorialComponent } from './nuevo-historial/nuevo-historial.component';
 import { PagesComponent } from './pages.component';
 
-const routes: Routes = [
-  {
-    path: 'dashboard',
-    component: PagesComponent,
 
-    children: [
-      { path: 'crear-paciente', component: CrearPacienteComponent },
-      { path: 'datos-doctor', component: DatosDoctorComponent },
-      { path: 'datos-paciente', component: DatosPacienteComponent},
-      { path: 'expediente/:id', component: ExpedienteComponent},
-      { path: 'historial-pacientes', component: HistorialPacienteComponent},
-      { path: 'nuevo-historial', component: NuevoHistorialComponent},
-    ],
-  },
+const routes: Routes = [
+    { path:'dashboard', component: PagesComponent,
+        children: [
+            { path:'crear-paciente', component:CrearPacienteComponent },
+            { path:'datos-doctor', component:DatosDoctorComponent },
+            { path:'datos-paciente', component:DatosPacienteComponent },
+            { path:'expediente/:id', component:ExpedienteComponent },
+            { path:'historial-paciente', component:HistorialPacienteComponent },
+            { path:'nuevo-historial', component:NuevoHistorialComponent }
+        ]
+    }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class PagesRoutingModule {}
+export class PagesRoutingModule { }

@@ -43,7 +43,7 @@
                                         <td>{{datos.telpaciente}}</td>
                                         <td>{{datos.dirpaciente}}</td>
                                         <td> 
-                                            <a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
+                                            <a (click)="seleccionarPaciente(datos.idpaciente);" class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
                                         </td>
                                         <td> 
                                             <a class="btn btn-success"><i class="fa fa-trash"></i></a>

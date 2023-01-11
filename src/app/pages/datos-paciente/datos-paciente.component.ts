@@ -24,4 +24,8 @@ export class DatosPacienteComponent implements OnInit {
     })
   }
 
+  seleccionarPaciente(idpaciente: any ){
+    console.log(idpaciente)
+  }
+
 }

@@ -47,4 +47,14 @@ export class PacientesService {
   getPaciente(){
     return this.http.get(`${this.url}ObtenerPacientes.php`);
   }
+
+
+  //seleccionar al paciente por medio de un boton editar
+  seleccionarPaciente(idpaciente: number){
+    return this.http.get(`${this.url}SeleccionarPaciente.php?idpaciente=${idpaciente}`)
+
+  }
+
+  
+
 }

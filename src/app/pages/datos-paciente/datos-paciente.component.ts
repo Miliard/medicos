@@ -10,6 +10,9 @@ import { PacientesService } from 'src/app/services/pacientes.service';
 export class DatosPacienteComponent implements OnInit {
 
   public pacientes: Pacientes[] = [];
+  public paciente: any = {};
+
+
   constructor(public pacienteService: PacientesService) { }
 
   ngOnInit(): void {
@@ -25,7 +28,12 @@ export class DatosPacienteComponent implements OnInit {
   }
 
   seleccionarPaciente(idpaciente: any ){
-    console.log(idpaciente)
+    this.pacienteService.seleccionarPaciente(idpaciente)
+    .subscribe((resp: any) => {
+      this.paciente = resp[0];  
+      console.log(this.paciente);
+
+    })
   }
 
 }

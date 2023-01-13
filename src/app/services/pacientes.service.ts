@@ -61,5 +61,9 @@ export class PacientesService {
     return this.http.post(`${this.url}EditarPaciente.php`, JSON.stringify(pacientes));
   }
   
+  //elimminar paciente 
+  eliminarPaciente(idpaciente: any) {
+    return this.http.get(`${this.url}EliminarPaciente.php?idpaciente=${idpaciente}`)
+  }
 
 }

@@ -43,8 +43,10 @@ export class DatosPacienteComponent implements OnInit {
           icon: 'success',
           title: 'Paciente editado correctamente',
           showConfirmButton: false,
-          timer: 2000
+          timer: 1000
         })
+
+        this.obtenerPacientes();
 
       }
     })

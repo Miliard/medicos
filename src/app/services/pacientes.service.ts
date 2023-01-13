@@ -55,6 +55,11 @@ export class PacientesService {
 
   }
 
+  // editar paciente
+
+  editarPaciente(pacientes: Pacientes) {
+    return this.http.post(`${this.url}EditarPaciente.php`, JSON.stringify(pacientes));
+  }
   
 
 }

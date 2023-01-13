@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pacientes } from 'src/app/interfaces/pacientes.interface';
 import { PacientesService } from 'src/app/services/pacientes.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-datos-paciente',
   templateUrl: './datos-paciente.component.html',
@@ -33,6 +33,20 @@ export class DatosPacienteComponent implements OnInit {
       this.paciente = resp[0];  
       console.log(this.paciente);
 
+    })
+  }
+
+  editarPaciente() {
+    this.pacienteService.editarPaciente(this.paciente).subscribe((resp: any) => {
+      if(resp['resultado'] == 'OK') {
+        Swal.fire({
+          icon: 'success',
+          title: 'Paciente editado correctamente',
+          showConfirmButton: false,
+          timer: 2000
+        })
+
+      }
     })
   }
 

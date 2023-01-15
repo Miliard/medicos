@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pacientes } from '../interfaces/pacientes.interface';
-
+import { Historial } from '../interfaces/historial.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -71,5 +71,7 @@ export class PacientesService {
   altaHistorial(newhistorial: any){
   return this.http.post(`${this.url}NuevoHistorial.php`, JSON.stringify(newhistorial));
   }
+
+
 
 }

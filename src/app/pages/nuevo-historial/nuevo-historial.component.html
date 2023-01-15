@@ -21,13 +21,13 @@
 
         <div class="row">            
             <div class="col-12">
-                <form >
-                <div >
+                <form [formGroup]="multiBloque" >
+                <div formGroupName="datosPaciente">
                     <div class="form-group row" >
                         <label for="example-text-input" class="col-2 col-form-label">Nombre</label>
                         <div class="col-5">
-                            <select class="form-control" >
-                                    <option >nompaciente</option>
+                            <select class="form-control" formControlName="nombre" >
+                                    <option *ngFor="let datos of pacientes" >{{datos.nompaciente}}</option>
                             </select>
                         </div>
                         
@@ -115,7 +115,12 @@
                             <input class="form-control" type="text" disabled>
                         </div>
                     </div>
-                </div>                   
+                </div>
+
+                <p>
+                    <pre>
+                        {{ multiBloque.value | json}}
+                    </pre>
                 </form>
             </div>
         </div>            

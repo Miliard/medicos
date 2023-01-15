@@ -12,6 +12,7 @@ export class NuevoHistorialComponent implements OnInit {
 
   pacientes: Pacientes[] = [];
 
+  public bloque: any = 1;
   public multiBloque = new FormGroup({
     datosPaciente: new FormGroup({
       nombre: new FormControl(''),
@@ -19,11 +20,15 @@ export class NuevoHistorialComponent implements OnInit {
       talla: new FormControl(''),
       frC: new FormControl(''),
       temperatura: new FormControl(''),
+    }),
+    datosPaciente2: new FormGroup({
       ah: new FormControl(''),
       apnp: new FormControl(''),
       hemotipo: new FormControl(''),
       alergias: new FormControl(''),
       app: new FormControl(''),
+    }),
+    datosPaciente3: new FormGroup({
       cita: new FormControl(''),
       diagnóstico: new FormControl('')
     })
@@ -39,6 +44,10 @@ export class NuevoHistorialComponent implements OnInit {
     this.pacienteService.getPaciente().subscribe(( resp: any) => {
       this.pacientes = resp;
     })
+  }
+
+  submit() {
+      
   }
 
 }

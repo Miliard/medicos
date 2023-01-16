@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pacientes } from '../interfaces/pacientes.interface';
 import { Historial } from '../interfaces/historial.interface';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,41 +38,34 @@ export class PacientesService {
 
   constructor( public http: HttpClient) { }
 
-// crear pacientes
-
+  // Crear Paciente
   altaPaciente(pacientes: Pacientes) {
     return this.http.post(`${this.url}AltaPaciente.php`, JSON.stringify(pacientes));
   }
 
-  // obtener pacientes
-  getPaciente(){
+  // Obtener pacientes
+  getPaciente() {
     return this.http.get(`${this.url}ObtenerPacientes.php`);
   }
-
-
-  //seleccionar al paciente por medio de un boton editar
-  seleccionarPaciente(idpaciente: number){
-    return this.http.get(`${this.url}SeleccionarPaciente.php?idpaciente=${idpaciente}`)
-
+  
+  // Seleccionar al paciente por medio un boton Editar
+  seleccionarPaciente(idpaciente: number ) {
+    return this.http.get(`${this.url}SeleccionarPaciente.php?idpaciente=${idpaciente}`);
   }
-
-  // editar paciente
-
+  
+  //Editar paciente
   editarPaciente(pacientes: Pacientes) {
     return this.http.post(`${this.url}EditarPaciente.php`, JSON.stringify(pacientes));
   }
-  
-  //elimminar paciente 
+
+  //Eliminar paciente
   eliminarPaciente(idpaciente: any) {
-    return this.http.get(`${this.url}EliminarPaciente.php?idpaciente=${idpaciente}`)
+    return this.http.get(`${this.url}EliminarPaciente.php?idpaciente=${idpaciente}`);
   }
 
-  // nuevo historial
-
-  altaHistorial(newhistorial: any){
-  return this.http.post(`${this.url}NuevoHistorial.php`, JSON.stringify(newhistorial));
+  //Nuevo Historial
+  altaHistorial(newhistorial: Historial) {
+    return this.http.post(`${this.url}NuevoHistorial.php`, JSON.stringify(newhistorial));
   }
-
-
-
+  
 }

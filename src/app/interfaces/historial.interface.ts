@@ -1,4 +1,4 @@
-export interface Historial{
+export interface Historial {
     
     pesohistorial: string;
     tallahistorial: string;
@@ -12,5 +12,6 @@ export interface Historial{
     citahistorial: string;
     idpaciente: string;
     fechahistorial: string;
-    diagnostic: string;
+    diagnostico: string;
+
 }

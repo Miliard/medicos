@@ -7,20 +7,18 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-crear-paciente',
   templateUrl: './crear-paciente.component.html',
-  styleUrls: ['./crear-paciente.component.css'],
+  styleUrls: ['./crear-paciente.component.css']
 })
 export class CrearPacienteComponent implements OnInit {
+
   pacientes: any = {};
 
-  constructor(
-    public pacientesService: PacientesService,
-    public router: Router
-  ) {}
+  constructor(public pacientesService: PacientesService, public router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   altaPaciente() {
-
     Swal.fire({
       title: 'Desea registrar al paciente?',
       showDenyButton: true,
@@ -28,28 +26,25 @@ export class CrearPacienteComponent implements OnInit {
       confirmButtonText: 'Registrar',
       denyButtonText: `No acepto`,
     }).then((result) => {
-
-      /* Read more about isConfirmed, isDenied below */
-       
-
-
+      /* Read more about isConfirmed, isDenied below */      
       if (result.isConfirmed) {
-        Swal.fire('Registrado!', '', 'success');
-
-                this.pacientesService.altaPaciente(this.pacientes).subscribe({
-              next: (result) => {
-                this.router.navigate(['/dashboard/nuevo-historial']);
-              },
-              error: (err) => {
-                console.log(err.error);
-              },
-            });
-
-            
+        Swal.fire('Registrado', '', 'success')
+        this.pacientesService.altaPaciente(this.pacientes).subscribe( 
+          {
+            next: result => {
+              this.router.navigate(['/dashboard/nuevo-historial']);
+            },
+            error: err => {
+              console.log(err.error);
+            }
+          }
+        );
       } else if (result.isDenied) {
-        Swal.fire('Ups!', '', 'info');
+        Swal.fire('Ups!', '', 'info')
       }
-    });
-  
+    })
+    
+
   }
+ 
 }
